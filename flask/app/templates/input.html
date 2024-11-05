@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input pesan dan gambar</title>
+</head>
+
+<body>
+
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <label for="">pesan</label><br>
+        <textarea name="pesan" id="pesan"></textarea><br>
+        <label for="">file</label><br>
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Upload</button>
+    </form>
+
+
+    <br>
+
+    {% if key %}
+    <img src="{{ url_for('static', filename='uploads/hasil.png') }}" alt="Example Image"
+        style="max-width: 100%; height: auto;">
+    <h2>Kunci Enkripsi: {{ key }}</h2>
+    {% else %}
+    <h2>Tidak ada kunci enkripsi yang tersedia.</h2>
+    {% endif %}
+
+</body>
+
+</html>

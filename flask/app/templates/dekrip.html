@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dekrip</title>
+</head>
+
+<body>
+
+    <form action="/dekrip" method="POST" enctype="multipart/form-data">
+        <label for="">file</label><br>
+        <input type="file" name="image" accept="image/*" required><br>
+        <label for="key">key</label><br>
+        <input type="text" name="key" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if pesan %}
+    <p>pesannya: {{pesan}}</p>
+    {%endif%}
+</body>
+
+</html>
